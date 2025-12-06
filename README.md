@@ -1,6 +1,7 @@
 # BINF-6210-Assignment-4
 Differential Gene Expression: Impact of Normalization Choice (airway + edgeR)
-Overview
+
+#Overview
 
 This project investigates how different normalization methods in edgeR affect differential expression (DE) results for RNA-seq data.
 
@@ -24,7 +25,7 @@ Reliability (using within-group Pearson correlation).
 
 The analysis follows the edgeR and limma RNA-seq workflows in Bioconductor 
 
-Data
+#Data
 airways RNA-seq dataset
 
 Source: Bioconductor airway package
@@ -33,7 +34,7 @@ Original study: Himes et al., 2014 (human airway smooth muscle cells with/withou
 
 Data type: Bulk RNA-seq counts (genes × samples).
 
-Design:
+#Design:
 
 8 samples total
 
@@ -55,19 +56,19 @@ data("airway")
 
 Date accessed: Nov 24, 2025
 
-Research Question
+#Research Question
 
 How do different normalization methods in edgeR (TMM, simple library-size scaling, and upper-quartile) influence: the number and overlap of DE genes between treated and untreated samples, the estimated log2 fold-changes, and simple precision/reliability metrics?
 
 This connects to the broader question: Are DE results robust to normalization choices in RNA-seq experiments?
 
-Methods Summary
+#Methods Summary
 
 The analysis is implemented in a single R script:
 
 R/Angelusm_script submission.R
 
-Key steps:
+#Key steps:
 
 Load data and metadata
 
@@ -135,7 +136,7 @@ MDS plots
 
 Generate MDS plots on normalized logCPM to check whether sample clustering (trt vs untrt) is stable across normalization strategies.
 
-Project Structure (files relevant to submission only)
+#Project Structure (files relevant to submission only)
 project_root/
 ├── R/
 │   └── airway_normalization_comparison.R   # main analysis script
@@ -153,7 +154,7 @@ project_root/
 │   └── Angelusm_assn4_storyboard.pdf           
 └── README.md                    # this file
 
-How to Run
+#How to Run
 
 Install required packages in R:
 
@@ -171,12 +172,12 @@ dir.create("doc", showWarnings = FALSE)
 dir.create("R", showWarnings = FALSE)
 
 
-Place the main script in R/ and source it from the project root:
+#Place the main script in R/ and source it from the project root:
 
 source("R/Angelusm_script submission.R")
 
 
-The script should:
+#The script should:
 
 Run end-to-end without errors.
 
@@ -204,7 +205,7 @@ Treated vs untreated samples separate clearly under all methods, again indicatin
 Precision / reliability metrics
 Median CoV and mean within-group correlation are very similar across methods, supporting the conclusion that, for airway, changing normalization has only minor impact on precision and reliability.
 
-Future directions
+#Future directions
 
 attempt to run script on different datasets: unofficially attempted on in class script example with not much difference-- script available in script folder.
 
@@ -212,7 +213,7 @@ attempt different pipelines on same dataset to see if there is any change
 
 attempt more accurate precision, reliability and accuracy measures, like in referenced papers, with different, more complex data 
 
-References
+#References
 
 Chen, Y., Lun, A. T. L., & Smyth, G. K. (2016). From reads to genes to pathways: differential expression analysis of RNA-Seq experiments using Rsubread and the edgeR quasi-likelihood pipeline. F1000Research, 5, 1438. https://doi.org/10.12688/f1000research.8987.2
 Chen, Y., Mccarthy, D., Ritchie, M., Robinson, M., Smyth, G., & Hall, E. (2008a). edgeR: differential analysis of sequence read count data User’s Guide. https://www.bioconductor.org/packages/devel/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf
